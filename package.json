@@ -1,0 +1,19 @@
+{
+  "name": "onyx",
+  "description": "Onyx — a local-first markdown notes app reconstructed from Obsidian's architecture via REA (morluto/rea)",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "Scott",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "node tests/harness.mjs"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0"
+  },
+  "allowScripts": {
+    "electron@31.7.7": true
+  }
+}

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' onyx:; style-src 'self' 'unsafe-inline'; img-src 'self' onyx: file: data:;" />
+  <title>Onyx</title>
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body class="theme-dark">
+  <!-- vault picker, shown until a vault opens (original flow: starter window) -->
+  <div id="vault-picker" class="vault-picker hidden">
+    <h1>Onyx</h1>
+    <p class="tagline">A local-first notebook. Your notes are plain files in a folder you own.</p>
+    <div class="vault-actions">
+      <button id="btn-open-vault">Open folder as vault</button>
+      <button id="btn-create-vault">Create new vault</button>
+      <div id="recent-vaults"></div>
+    </div>
+  </div>
+
+  <!-- main workspace (original: workspace.json layout) -->
+  <div id="workspace" class="workspace hidden">
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-header">
+        <span id="vault-name">vault</span>
+        <button id="btn-switch-vault" title="Switch vault">⌄</button>
+      </div>
+      <div id="file-tree" class="file-tree"></div>
+      <div id="backlinks" class="backlinks"></div>
+    </aside>
+
+    <main class="main">
+      <div class="toolbar">
+        <button id="btn-preview" title="Toggle preview (Ctrl+E)">Preview</button>
+        <span id="file-path" class="file-path"></span>
+      </div>
+      <div class="editor-wrap">
+        <textarea id="editor" spellcheck="true" placeholder="Start writing…"></textarea>
+        <div id="preview" class="preview hidden"></div>
+      </div>
+    </main>
+
+    <footer id="statusbar" class="statusbar">
+      <span id="word-count">0 words</span>
+      <span id="status-right"></span>
+    </footer>
+
+    <!-- command palette (original core plugin: command-palette) -->
+    <div id="palette" class="palette hidden">
+      <input id="palette-input" type="text" placeholder="Type a command…" />
+      <ul id="palette-results"></ul>
+    </div>
+
+    <!-- search (original core plugin: search) -->
+    <div id="search" class="search hidden">
+      <input id="search-input" type="text" placeholder="Search notes…" />
+      <ul id="search-results"></ul>
+    </div>
+  </div>
+
+  <script src="lib/markdown.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
